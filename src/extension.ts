@@ -6,21 +6,21 @@ import Settings from './Code/action/Setting';
 
 
 export function activate(context: vscode.ExtensionContext) {
-// 
 
-	console.log("123123");
+
 	
-
-	const settingsTDP = new SettingsTDO();
+	// const settingsTDP = new SettingsTDO();
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('vs-note.dico', () => {
 			vscode.window.showInformationMessage('Hello World from VS Note!');
 		}),
-	
+		vscode.commands.registerCommand('account.login', () => Account.login()),
+		vscode.commands.registerCommand('account.logout', () => Account.login()),
+		vscode.commands.registerCommand('account.sync',()=> Settings.showOptin())
 	);
-	// vscode.window.registerTreeDataProvider('settings', settingsTDP);
-	vscode.commands.registerCommand('settings.login', () => Account.login());
+	
+	
 	
 	
 	// let account = new Account(context);

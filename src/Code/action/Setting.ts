@@ -6,6 +6,11 @@ export default class Settings {
         
     }
 
+
+    static sync(){
+        vscode.window.showInformationMessage('settings.sync');
+    }
+
     static showOptin() {
         vscode.window.showInformationMessage('settings.showOptin');
     }
